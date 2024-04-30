@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/png" />
+</head>
+<body>
+    <div>
+        <audio id="mp3" autoplay loop hidden> <source src="sound/music.mp3" type="audio/mp3" /></audio>
+        <audio id="over_voice" hidden><source src="sound/game_over.mp3" type="audio/mp3" /></audio>
+        <audio id="score_up" hidden><source src="sound/score_up.wav" type="audio/wav" /></audio>
+        <audio id="double_row" hidden> <source src="sound/double_kill.mp3" type="audio/mp3" /> </audio>
+        <audio id="unstoppable" hidden><source src="sound/unstoppable.mp3" type="audio/mp3" /></audio>
+        <audio id="pauseclick" hidden><source src="sound/pauseclick.mp3" type="audio/mp3" /></audio>
+        <audio id="pausesecond" hidden><source src="sound/pausesecond.mp3" type="audio/mp3" /></audio>
+        <audio id="volume" hidden><source src="sound/volume.wav" type="audio/wav" /></audio>
+        <audio id="volumechanger" hidden><source src="sound/volumechanger.mp3" type="audio/mp3" /></audio>
+        <audio id="repload" hidden><source src="sound/repload.mp3" type="audio/mp3" /></audio>
+    </div>
+
+    <div id="gameOverMessage" class="game-message hidden">
+        <p>Game Over</p>
+    </div>
+
+    <div id="body">
+        <div id="info_bar">
+            <div id="info_keyboard">
+                <ul style="list-style-type: none">
+                    <li>KEYBOARD</li>
+                    <li>CONTROLS</li>
+                </ul>
+            </div>
+            <br />
+            <div id="info_keyboard_controls">
+                <ul style="list-style-type: none">
+                    <li>MOVE RIGHT</li>
+                    <li>D OR →</li>
+                    <br />
+                    <li>MOVE LEFT</li>
+                    <li>A OR ←</li>
+                    <br />
+                    <li>ROTATE</li>
+                    <li>W OR ↑</li>
+                    <br />
+                    <li>MOVE DOWN</li>
+                    <li>S OR ↓</li>
+                    <br />
+                    <li>PAUSE</li>
+                    <li>ESC and P</li>
+                    <br>
+                    <li>RESTART</li>
+                    <li>R</li>
+                    <br>
+                    <li>Mute</li>
+                    <li>M</li>
+                </ul>
+            </div>
+        </div>
+        <canvas id="tetris" width="300" height="600"></canvas>
+
+        <div class="container">
+            <div class="box_score">
+                Level :
+                <div id="level">1</div>
+            </div>
+            <div class="box_score">
+                Score :
+                <div id="score">0</div>
+            </div>
+            <div id="volumeIndicator" style="display: none">100%</div>
+            <div>
+                <button id="buttons" onclick="toggleMusic()">
+                    <img style="width: 30px; height: 30px" id="volume_icon" src="./img/volume.png" alt="img" />
+                </button>
+                <button id="buttons" onclick="changeVolume(-0.1)">
+                    <img style="width: 30px; height: 30px" src="./img/volume_down.png" alt="img" />
+                </button>
+                <button id="buttons" onclick="changeVolume(0.1)">
+                    <img style="width: 30px; height: 30px" src="./img/volume_upp.png" alt="img" />
+                </button>
+            </div>
+            <div class="icon_box">
+                <img style="width: 300px; height: 250px" src="img/logo.png" alt="img" />
+            </div>
+        </div>
+    </div> 
+    <script src="js/Pieces.js"></script>
+    <script src="js/tetrominoes.js"></script>
+    <script src="js/tetris.js"></script>
+</body>
+
+</html>
