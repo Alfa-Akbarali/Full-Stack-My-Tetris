@@ -2,7 +2,9 @@
 
 This is a simple Tetris game implemented in HTML, CSS, and JavaScript.
 
-## Getting Started
+## To play the game
+    Here are link to play:
+    https://mygametetris.netlify.app
 
 ### Prerequisites
 
